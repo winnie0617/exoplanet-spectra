@@ -44,14 +44,8 @@ df = pd.concat([df]*6)
 df.reset_index(inplace=True, drop=True)
 df.insert(0, 'biota_type', biota_list)
 
-df.to_csv('surface_composition.csv', index=False)
+# df.to_csv('surface_composition.csv', index=False)
+
+\
 
 # %%
- #%% Add Gaussian Noise
-
-# Make output reproducible
-SEED = 10
-RAND_STATE = 10
-
-rand = np.random.RandomState(SEED)
-rand.normal
