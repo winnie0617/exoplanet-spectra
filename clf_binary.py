@@ -19,15 +19,16 @@ first_clfs = {
     'LDA': LinearDiscriminantAnalysis(solver='svd'),
     'KNN': KNeighborsClassifier(leaf_size=10, weights='distance', n_neighbors=1),
     'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=3.563e-06),
+    'NB': GaussianNB(),
     'SVM': LinearSVC(C=0.1),
     'RF': RandomForestClassifier(n_estimators=247, ccp_alpha=3.563e-06)
 }
 # Add the two voting classifiers
 clfs = first_clfs.copy()
 clfs['MVH'] = VotingClassifier(estimators=list(first_clfs.items()), voting='hard')
-# Change SVM to predict proba
-# first_clfs['SVM'] = SVC(C=0.1, probability=True)
-# clfs['MVS'] = VotingClassifier(estimators=list(first_clfs.items()), voting='soft')
+# Remove SVM for MVS
+del first_clfs['SVM']
+clfs['MVS'] = VotingClassifier(estimators=list(first_clfs.items()), voting='soft')
 
 # Get binary label
 df = pd.read_pickle('full_colors.pkl')
@@ -71,7 +72,10 @@ noises = np.apply_along_axis(lambda x : np.random.normal(0, x**(1/2), X_test.sha
 df = pd.DataFrame(columns=list(clfs.keys()))
 
 # Get accuracies for each realization
+i = 0
 for noise in noises:
+    print(f'{i} realizations')
+    i += 1
     X_noisy = X_test + noise
     X_scaled = scaler.transform(X_noisy)
 
