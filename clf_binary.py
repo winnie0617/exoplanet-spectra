@@ -83,7 +83,7 @@ for noise in noises:
     res = {}
     for name, clf in clfs.items():
         y_pred = clf.predict(X_scaled)
-        res[name] = balanced_accuracy_score(y_pred, y_test)
+        res[name] = balanced_accuracy_score(y_test, y_pred)
     print(res)
     df = df.append(res, ignore_index=True)
 
