@@ -1,0 +1,11 @@
+=======================2021-03-14 01:28:11.746293============================
+LDA
+Best score: 0.5312004189561976
+{'solver': 'svd', 'tol': 0}
+KNN
+Best score: 0.98105465003778
+{'metric': 'manhattan', 'n_neighbors': 1, 'weights': 'uniform'}
+CART
+Best score: 0.981228728235038
+{'ccp_alpha': 0, 'class_weight': 'balanced', 'criterion': 'gini'}
+=======================2021-03-14 15:42:56.982457============================

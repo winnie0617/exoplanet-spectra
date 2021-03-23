@@ -54,29 +54,34 @@ np.random.seed(42) # Reproducible result
 
 # print("X2", X2)
 
-SNs = np.random.uniform(low=1, high=100, size=REALIZATION)
+# SNs = np.random.uniform(low=1, high=100, size=REALIZATION)
 # 2d array: SNs[realization][BVRI]
-SNs = np.repeat(SNs, 4, axis=0).reshape(REALIZATION, 4)
+# SNs = np.repeat(SNs, 4, axis=0).reshape(REALIZATION, 4)
 
-X2 = (X_test.var() + X_test.mean()**2).to_numpy()
-# Turn into 2d array too
-X2 = np.broadcast_to(X2, (REALIZATION, 4))
+# X2 = (X_test.var() + X_test.mean()**2).to_numpy()
+# # Turn into 2d array too
+# X2 = np.broadcast_to(X2, (REALIZATION, 4))
 
-sigma2s = X2 / SNs
+# sigma2s = X2 / SNs
 
-# 3d array: noises[realization][each data point][BVRI]
-sigma2s = sigma2s.reshape(REALIZATION, 1, 4)
-noises = np.apply_along_axis(lambda x : np.random.normal(0, x**(1/2), X_test.shape[0]), 1, sigma2s)
+# # 3d array: noises[realization][each data point][BVRI]
+# sigma2s = sigma2s.reshape(REALIZATION, 1, 4)
+# noises = np.apply_along_axis(lambda x : np.random.normal(0, x**(1/2), X_test.shape[0]), 1, sigma2s)
+# print(noises)
 
 # df, realizations (sn) as rows, columns are the classifiers
 df = pd.DataFrame(columns=list(clfs.keys()))
 
 # Get accuracies for each realization
-i = 0
-for noise in noises:
-    print(f'{i} realizations')
-    i += 1
-    X_noisy = X_test + noise
+SNs = list(range(1, 101))
+for SN in SNs:
+    print(f'SNR: {SN}')
+    X_noisy = np.copy(X_test)
+    # print(X_clean/SN)
+    for noise_realization in range(REALIZATION):
+        X_noisy += np.random.normal(loc=0, scale=X_test/SN/(REALIZATION**(1/2))) # Here already using noisy data for sd??
+        X_noisy[X_noisy < 0] = 0 # Avoid negative flux
+    # print("X_noisy", X_test)
     X_scaled = scaler.transform(X_noisy)
 
     # Save accuracy for each model
@@ -87,6 +92,6 @@ for noise in noises:
     print(res)
     df = df.append(res, ignore_index=True)
 
-df.insert(loc=0, column='S/N', value=SNs[:,0])
+df.insert(loc=0, column='S/N', value=SNs)
 df.to_csv('binary_all.csv', index=False)
 
