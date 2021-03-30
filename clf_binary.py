@@ -62,7 +62,6 @@ print(df)
 SNs = [1, 3, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 for SN in SNs:
     print(f'SNR: {SN}')
-    X_noisy = np.copy(X_test)
     for noise_realization in range(REALIZATION):
         X_noisy = X_test + np.random.normal(loc=0, scale=X_test/SN)
         

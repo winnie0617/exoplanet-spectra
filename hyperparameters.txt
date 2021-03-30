@@ -1,13 +1,112 @@
-=======================2021-03-14 01:28:11.746293============================
+=======================2021-03-30 17:07:51.120623============================
+
 LDA
-Best score: 0.5312004189561976
-{'solver': 'svd', 'tol': 0}
+0.5: {'solver': 'svd', 'tol': 1}
+0.5007: {'solver': 'svd', 'tol': 0}
+0.5215: {'solver': 'svd', 'tol': 0.5}
+0.5326: {'solver': 'svd', 'tol': 0.1}
+0.5007: {'solver': 'svd', 'tol': 0.01}
+0.5007: {'solver': 'lsqr', 'tol': 1}
+0.5007: {'solver': 'lsqr', 'tol': 0}
+0.5007: {'solver': 'lsqr', 'tol': 0.5}
+0.5007: {'solver': 'lsqr', 'tol': 0.1}
+0.5007: {'solver': 'lsqr', 'tol': 0.01}
+Best score: 0.5326
+Best params {'solver': 'svd', 'tol': 0.1}
+
 KNN
-Best score: 0.98105465003778
-{'metric': 'manhattan', 'n_neighbors': 1, 'weights': 'uniform'}
+0.5329: {'metric': 'euclidean', 'n_neighbors': 1, 'weights': 'uniform'}
+0.5329: {'metric': 'euclidean', 'n_neighbors': 1, 'weights': 'distance'}
+0.5327: {'metric': 'euclidean', 'n_neighbors': 3, 'weights': 'uniform'}
+0.5327: {'metric': 'euclidean', 'n_neighbors': 3, 'weights': 'distance'}
+0.5328: {'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'uniform'}
+0.5328: {'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'distance'}
+0.5335: {'metric': 'euclidean', 'n_neighbors': 7, 'weights': 'uniform'}
+0.5334: {'metric': 'euclidean', 'n_neighbors': 7, 'weights': 'distance'}
+0.5334: {'metric': 'euclidean', 'n_neighbors': 9, 'weights': 'uniform'}
+0.5333: {'metric': 'euclidean', 'n_neighbors': 9, 'weights': 'distance'}
+0.5326: {'metric': 'euclidean', 'n_neighbors': 11, 'weights': 'uniform'}
+0.5326: {'metric': 'euclidean', 'n_neighbors': 11, 'weights': 'distance'}
+0.5329: {'metric': 'euclidean', 'n_neighbors': 13, 'weights': 'uniform'}
+0.5329: {'metric': 'euclidean', 'n_neighbors': 13, 'weights': 'distance'}
+0.5334: {'metric': 'euclidean', 'n_neighbors': 15, 'weights': 'uniform'}
+0.5334: {'metric': 'euclidean', 'n_neighbors': 15, 'weights': 'distance'}
+0.5333: {'metric': 'euclidean', 'n_neighbors': 17, 'weights': 'uniform'}
+0.5333: {'metric': 'euclidean', 'n_neighbors': 17, 'weights': 'distance'}
+0.5333: {'metric': 'euclidean', 'n_neighbors': 19, 'weights': 'uniform'}
+0.5333: {'metric': 'euclidean', 'n_neighbors': 19, 'weights': 'distance'}
+0.53: {'metric': 'manhattan', 'n_neighbors': 1, 'weights': 'uniform'}
+0.53: {'metric': 'manhattan', 'n_neighbors': 1, 'weights': 'distance'}
+0.5298: {'metric': 'manhattan', 'n_neighbors': 3, 'weights': 'uniform'}
+0.5298: {'metric': 'manhattan', 'n_neighbors': 3, 'weights': 'distance'}
+0.53: {'metric': 'manhattan', 'n_neighbors': 5, 'weights': 'uniform'}
+0.53: {'metric': 'manhattan', 'n_neighbors': 5, 'weights': 'distance'}
+0.5305: {'metric': 'manhattan', 'n_neighbors': 7, 'weights': 'uniform'}
+0.5305: {'metric': 'manhattan', 'n_neighbors': 7, 'weights': 'distance'}
+0.5304: {'metric': 'manhattan', 'n_neighbors': 9, 'weights': 'uniform'}
+0.5304: {'metric': 'manhattan', 'n_neighbors': 9, 'weights': 'distance'}
+0.5305: {'metric': 'manhattan', 'n_neighbors': 11, 'weights': 'uniform'}
+0.5305: {'metric': 'manhattan', 'n_neighbors': 11, 'weights': 'distance'}
+0.5305: {'metric': 'manhattan', 'n_neighbors': 13, 'weights': 'uniform'}
+0.5305: {'metric': 'manhattan', 'n_neighbors': 13, 'weights': 'distance'}
+0.5303: {'metric': 'manhattan', 'n_neighbors': 15, 'weights': 'uniform'}
+0.5303: {'metric': 'manhattan', 'n_neighbors': 15, 'weights': 'distance'}
+0.5303: {'metric': 'manhattan', 'n_neighbors': 17, 'weights': 'uniform'}
+0.5303: {'metric': 'manhattan', 'n_neighbors': 17, 'weights': 'distance'}
+0.5306: {'metric': 'manhattan', 'n_neighbors': 19, 'weights': 'uniform'}
+0.5306: {'metric': 'manhattan', 'n_neighbors': 19, 'weights': 'distance'}
+0.5329: {'metric': 'minkowski', 'n_neighbors': 1, 'weights': 'uniform'}
+0.5329: {'metric': 'minkowski', 'n_neighbors': 1, 'weights': 'distance'}
+0.5327: {'metric': 'minkowski', 'n_neighbors': 3, 'weights': 'uniform'}
+0.5327: {'metric': 'minkowski', 'n_neighbors': 3, 'weights': 'distance'}
+0.5328: {'metric': 'minkowski', 'n_neighbors': 5, 'weights': 'uniform'}
+0.5328: {'metric': 'minkowski', 'n_neighbors': 5, 'weights': 'distance'}
+0.5335: {'metric': 'minkowski', 'n_neighbors': 7, 'weights': 'uniform'}
+0.5334: {'metric': 'minkowski', 'n_neighbors': 7, 'weights': 'distance'}
+0.5334: {'metric': 'minkowski', 'n_neighbors': 9, 'weights': 'uniform'}
+0.5333: {'metric': 'minkowski', 'n_neighbors': 9, 'weights': 'distance'}
+0.5326: {'metric': 'minkowski', 'n_neighbors': 11, 'weights': 'uniform'}
+0.5326: {'metric': 'minkowski', 'n_neighbors': 11, 'weights': 'distance'}
+0.5329: {'metric': 'minkowski', 'n_neighbors': 13, 'weights': 'uniform'}
+0.5329: {'metric': 'minkowski', 'n_neighbors': 13, 'weights': 'distance'}
+0.5334: {'metric': 'minkowski', 'n_neighbors': 15, 'weights': 'uniform'}
+0.5334: {'metric': 'minkowski', 'n_neighbors': 15, 'weights': 'distance'}
+0.5333: {'metric': 'minkowski', 'n_neighbors': 17, 'weights': 'uniform'}
+0.5333: {'metric': 'minkowski', 'n_neighbors': 17, 'weights': 'distance'}
+0.5333: {'metric': 'minkowski', 'n_neighbors': 19, 'weights': 'uniform'}
+0.5333: {'metric': 'minkowski', 'n_neighbors': 19, 'weights': 'distance'}
+Best score: 0.5335
+Best params {'metric': 'euclidean', 'n_neighbors': 7, 'weights': 'uniform'}
+
 CART
-Best score: 0.981228728235038
-{'ccp_alpha': 0, 'class_weight': 'balanced', 'criterion': 'gini'}
-=======================2021-03-14 15:42:56.982457============================
-=======================2021-03-30 10:48:24.560586============================
-=======================2021-03-30 10:49:00.869685============================
+0.5203: {'ccp_alpha': 0, 'class_weight': None, 'criterion': 'gini'}
+0.522: {'ccp_alpha': 0, 'class_weight': None, 'criterion': 'entropy'}
+0.5193: {'ccp_alpha': 0, 'class_weight': 'balanced', 'criterion': 'gini'}
+0.522: {'ccp_alpha': 0, 'class_weight': 'balanced', 'criterion': 'entropy'}
+0.5: {'ccp_alpha': 0.01, 'class_weight': None, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 0.01, 'class_weight': None, 'criterion': 'entropy'}
+0.5192: {'ccp_alpha': 0.01, 'class_weight': 'balanced', 'criterion': 'gini'}
+0.5201: {'ccp_alpha': 0.01, 'class_weight': 'balanced', 'criterion': 'entropy'}
+0.5: {'ccp_alpha': 8, 'class_weight': None, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 8, 'class_weight': None, 'criterion': 'entropy'}
+0.5: {'ccp_alpha': 8, 'class_weight': 'balanced', 'criterion': 'gini'}
+0.5: {'ccp_alpha': 8, 'class_weight': 'balanced', 'criterion': 'entropy'}
+0.5227: {'ccp_alpha': 1e-06, 'class_weight': None, 'criterion': 'gini'}
+0.5184: {'ccp_alpha': 1e-06, 'class_weight': None, 'criterion': 'entropy'}
+0.5198: {'ccp_alpha': 1e-06, 'class_weight': 'balanced', 'criterion': 'gini'}
+0.5218: {'ccp_alpha': 1e-06, 'class_weight': 'balanced', 'criterion': 'entropy'}
+0.5236: {'ccp_alpha': 1e-08, 'class_weight': None, 'criterion': 'gini'}
+0.5199: {'ccp_alpha': 1e-08, 'class_weight': None, 'criterion': 'entropy'}
+0.524: {'ccp_alpha': 1e-08, 'class_weight': 'balanced', 'criterion': 'gini'}
+0.5219: {'ccp_alpha': 1e-08, 'class_weight': 'balanced', 'criterion': 'entropy'}
+Best score: 0.524
+Best params {'ccp_alpha': 1e-08, 'class_weight': 'balanced', 'criterion': 'gini'}
+
+LR
+0.5022: {'C': 100}
+0.5025: {'C': 10}
+0.503: {'C': 1.0}
+0.5051: {'C': 0.1}
+0.5191: {'C': 0.01}
+Best score: 0.5191
+Best params {'C': 0.01}
