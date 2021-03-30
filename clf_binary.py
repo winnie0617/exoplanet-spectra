@@ -52,46 +52,31 @@ for name, clf in clfs.items():
 REALIZATION = 1000
 np.random.seed(42) # Reproducible result
 
-# print("X2", X2)
-
-# SNs = np.random.uniform(low=1, high=100, size=REALIZATION)
-# 2d array: SNs[realization][BVRI]
-# SNs = np.repeat(SNs, 4, axis=0).reshape(REALIZATION, 4)
-
-# X2 = (X_test.var() + X_test.mean()**2).to_numpy()
-# # Turn into 2d array too
-# X2 = np.broadcast_to(X2, (REALIZATION, 4))
-
-# sigma2s = X2 / SNs
-
-# # 3d array: noises[realization][each data point][BVRI]
-# sigma2s = sigma2s.reshape(REALIZATION, 1, 4)
-# noises = np.apply_along_axis(lambda x : np.random.normal(0, x**(1/2), X_test.shape[0]), 1, sigma2s)
-# print(noises)
-
-# df, realizations (sn) as rows, columns are the classifiers
-df = pd.DataFrame(columns=list(clfs.keys()))
+cols = ['S/N']
+cols.extend(list(clfs.keys()))
+df = pd.DataFrame(columns=cols)
+print(df)
 
 # Get accuracies for each realization
 SNs = list(range(1, 101))
 for SN in SNs:
     print(f'SNR: {SN}')
     X_noisy = np.copy(X_test)
-    # print(X_clean/SN)
     for noise_realization in range(REALIZATION):
-        X_noisy += np.random.normal(loc=0, scale=X_test/SN/(REALIZATION**(1/2))) # Here already using noisy data for sd??
-        X_noisy[X_noisy < 0] = 0 # Avoid negative flux
-    # print("X_noisy", X_test)
-    X_scaled = scaler.transform(X_noisy)
+        X_noisy = X_test + np.random.normal(loc=0, scale=X_test/SN)
+        
+        while np.any(X_noisy < 0): # Avoid negative flux
+            X_noisy[X_noisy < 0] = X_test[X_noisy < 0] + np.random.normal(loc=0, scale=X_test/SN)
+        X_scaled = scaler.transform(X_noisy)
 
-    # Save accuracy for each model
-    res = {}
-    for name, clf in clfs.items():
-        y_pred = clf.predict(X_scaled)
-        res[name] = balanced_accuracy_score(y_test, y_pred)
-    print(res)
-    df = df.append(res, ignore_index=True)
+        # Save accuracy for each model
+        res = {'S/N': SN}
+        for name, clf in clfs.items():
+            y_pred = clf.predict(X_scaled)
+            res[name] = balanced_accuracy_score(y_test, y_pred)
+        print(res)
+        df = df.append(res, ignore_index=True)
 
-df.insert(loc=0, column='S/N', value=SNs)
+# df.insert(loc=0, column='S/N', value=SNs)
 df.to_csv('binary_all.csv', index=False)
 

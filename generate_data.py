@@ -46,6 +46,4 @@ df.insert(0, 'biota_type', biota_list)
 
 # df.to_csv('surface_composition.csv', index=False)
 
-\
-
 # %%
