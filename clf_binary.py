@@ -49,7 +49,7 @@ for name, clf in clfs.items():
 # ========================================== Test Set ================================================
 
 # Add Gaussian noise
-REALIZATION = 1000
+REALIZATION = 100
 np.random.seed(42) # Reproducible result
 
 cols = ['S/N']
@@ -58,7 +58,8 @@ df = pd.DataFrame(columns=cols)
 print(df)
 
 # Get accuracies for each realization
-SNs = list(range(1, 101))
+# SNs = list(range(1, 101))
+SNs = [1, 3, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 for SN in SNs:
     print(f'SNR: {SN}')
     X_noisy = np.copy(X_test)

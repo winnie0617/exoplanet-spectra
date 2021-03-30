@@ -47,3 +47,11 @@ df.insert(0, 'biota_type', biota_list)
 # df.to_csv('surface_composition.csv', index=False)
 
 # %%
+import pandas as pd
+from sklearn.model_selection import train_test_split
+df = pd.read_pickle('full_colors.pkl')
+df['Y'] = df.biota_percentage != 0
+train_test_split(df[['B','V','R','I']], df['Y'], test_size=0.2, random_state=42)
+# %%
+
+# %%
