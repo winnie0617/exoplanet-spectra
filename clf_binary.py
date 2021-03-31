@@ -15,13 +15,13 @@ from sklearn.preprocessing import StandardScaler
 
 # Classifiers and Hyperparameters
 first_clfs = {
-    'LR': LogisticRegression(C=100), 
+    'LR': LogisticRegression(C=1e-7, penalty='l2', solver='liblinear'), 
     'LDA': LinearDiscriminantAnalysis(solver='svd'),
-    'KNN': KNeighborsClassifier(leaf_size=10, weights='distance', n_neighbors=1),
+    'KNN': KNeighborsClassifier(weights='distance', n_neighbors=300),
     'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=3.563e-06),
     'NB': GaussianNB(),
-    'SVM': LinearSVC(C=0.1),
-    'RF': RandomForestClassifier(n_estimators=247, ccp_alpha=3.563e-06)
+    'SVM': LinearSVC(C=1e-8),
+    'RF': RandomForestClassifier(n_estimators=400, max_features='sqrt', max_depth=5)
 }
 # Add the two voting classifiers
 clfs = first_clfs.copy()

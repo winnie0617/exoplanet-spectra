@@ -17,12 +17,12 @@ from datetime import datetime
 
 # Classifiers and Hyperparameters
 first_clfs = {
-    'LDA': (LinearDiscriminantAnalysis, {'solver':['svd', 'lsqr'], 'tol':[1, 0, 0.5, 1e-1, 1e-2]}),
-    'KNN': (KNeighborsClassifier, {'n_neighbors': range(1, 21, 2), 'metric': ['euclidean', 'manhattan', 'minkowski'], 'weights': ['uniform', 'distance']}),
-    'CART': (DecisionTreeClassifier, {'criterion': ['gini', 'entropy'], 'ccp_alpha': [0, 1e-2, 12-4, 1e-6, 1e-8], 'class_weight': [None, 'balanced']}),
-    # 'RF': (RandomForestClassifier, {'n_estimators': [10, 100, 500, 1000], 'max_features': ['sqrt', 'log2'], 'bootstrap': [True, False],'max_depth': [3, 5, 10, 20, 50, 100, None]}),
-    # 'SVM': (SVC, {'kernel': ['poly', 'rbf', 'sigmoid', 'lienar']}), #, 'C': [50, 10, 1.0, 0.1, 0.01], 'gamma':['scale', 'auto'], 'class_weight': ['balanced', None]}),
-    'LR': (LogisticRegression, {'C':[1.0, 0.1, 0.01]}),
+    # 'LDA': (LinearDiscriminantAnalysis, {'solver':['svd'], 'tol':[0.1, 0.2, 0.3, 0.5, 0.8]}),
+    # 'KNN': (KNeighborsClassifier, {'n_neighbors': np.logspace(2, 2.6, num=10, dtype=int), 'metric': ['euclidean']})
+    # 'CART': (DecisionTreeClassifier, {'criterion': ['gini'], 'ccp_alpha': [1e-3, 1e-4, 1e-6, 1e-8, 1e-10]),
+    # 'RF': (RandomForestClassifier, {'n_estimators': [400], 'max_features': ['sqrt'], 'max_depth': [5], 'min_samples_split': [5]}),
+    # 'LR': (LogisticRegression, {'C': [1e-6, 1e-7, 1e-8], 'solver': ['liblinear'], 'penalty': ['l2']}),
+    'SVM': (LinearSVC, {'C': np.logspace(-12, -7, 10)})
     # 'LR': (LogisticRegression, {'C':[100, 10, 1.0, 0.1, 0.01], 'solver': ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'], 'penalty': ['none', 'l1', 'l2', 'elasticnet']}),
 }
 # Add the two voting classifiers
