@@ -15,13 +15,13 @@ from sklearn.preprocessing import StandardScaler
 
 # Classifiers and Hyperparameters
 first_clfs = {
-    'LR': LogisticRegression(C=1e-7, penalty='l2', solver='liblinear'), 
-    'LDA': LinearDiscriminantAnalysis(solver='svd'),
-    'KNN': KNeighborsClassifier(weights='distance', n_neighbors=300),
-    'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=3.563e-06),
+    'LR': LogisticRegression(C=0.1, penalty='l2', solver='liblinear'), 
+    'LDA': LinearDiscriminantAnalysis(solver='svd', tol=0.01),
+    'KNN': KNeighborsClassifier(weights='distance', n_neighbors=41),
+    'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=5e-5),
     'NB': GaussianNB(),
-    'SVM': LinearSVC(C=1e-8),
-    'RF': RandomForestClassifier(n_estimators=400, max_features='sqrt', max_depth=5)
+    'SVM': LinearSVC(C=100),
+    'RF': RandomForestClassifier(n_estimators=200, min_samples_split=50, class_weight='balanced', ccp_alpha=0.0003)
 }
 # Add the two voting classifiers
 clfs = first_clfs.copy()
@@ -78,5 +78,5 @@ for SN in SNs:
         df = df.append(res, ignore_index=True)
 
 # df.insert(loc=0, column='S/N', value=SNs)
-df.to_csv('binary_all.csv', index=False)
+df.to_csv('binary_new_param.csv', index=False)
 

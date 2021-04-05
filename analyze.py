@@ -4,7 +4,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('binary_all.csv')
+df = pd.read_csv('binary_sn_1.csv')
 # df['S/N'] = np.round(df['S/N'], decimals=-1)
 df = df[['S/N', 'LR', 'LDA', 'KNN', 'MVH', 'SVM', 'NB', 'CART', 'RF', 'MVS']]
 print("df", df)

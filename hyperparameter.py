@@ -16,21 +16,15 @@ from sklearn.preprocessing import StandardScaler
 from datetime import datetime
 
 # Classifiers and Hyperparameters
-first_clfs = {
-    # 'LDA': (LinearDiscriminantAnalysis, {'solver':['svd'], 'tol':[0.1, 0.2, 0.3, 0.5, 0.8]}),
-    # 'KNN': (KNeighborsClassifier, {'n_neighbors': np.logspace(2, 2.6, num=10, dtype=int), 'metric': ['euclidean']})
-    # 'CART': (DecisionTreeClassifier, {'criterion': ['gini'], 'ccp_alpha': [1e-3, 1e-4, 1e-6, 1e-8, 1e-10]),
-    # 'RF': (RandomForestClassifier, {'n_estimators': [400], 'max_features': ['sqrt'], 'max_depth': [5], 'min_samples_split': [5]}),
-    # 'LR': (LogisticRegression, {'C': [1e-6, 1e-7, 1e-8], 'solver': ['liblinear'], 'penalty': ['l2']}),
-    'SVM': (LinearSVC, {'C': np.logspace(-12, -7, 10)})
-    # 'LR': (LogisticRegression, {'C':[100, 10, 1.0, 0.1, 0.01], 'solver': ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'], 'penalty': ['none', 'l1', 'l2', 'elasticnet']}),
-}
-# Add the two voting classifiers
-clfs = first_clfs.copy()
-# clfs['MVH'] = VotingClassifier(estimators=list(first_clfs.items()), voting='hard')
-# # Remove SVM for MVS
-# del first_clfs['SVM']
-# clfs['MVS'] = VotingClassifier(estimators=list(first_clfs.items()), voting='soft')
+clfs = {
+    # 'LR': (LogisticRegression, {'C': np.logspace(-2, 0.5, 10), 'solver': ['liblinear'], 'penalty': ['l2']}),
+    # 'LDA': (LinearDiscriminantAnalysis, {'solver':['svd'], 'tol': np.logspace(-6, -1, 10)),
+    # 'KNN': (KNeighborsClassifier, {'n_neighbors': [31,41,51,61,71,81]}),
+    # 'KNN': (KNeighborsClassifier, {'n_neighbors': np.logspace(1, 3, num=10, dtype=int), 'metric': ['euclidean']}),
+    # 'CART': (DecisionTreeClassifier, {'criterion': ['gini'], 'ccp_alpha': [3e-5,5e-5,1e-5,5e-4]}),
+    # 'SVM': (LinearSVC, {'C': [50, 100, 200]}),
+    'RF': (RandomForestClassifier, {'n_estimators': [400, 600], 'min_samples_split': [50], 'class_weight': ['balanced'], 'ccp_alpha': [0.0003]}),
+    }
 
 # Get binary label
 df = pd.read_pickle('full_colors.pkl')
@@ -46,7 +40,7 @@ scaler.fit(X_train)
 X_train = scaler.transform(X_train)
 # Add noise to val set
 np.random.seed(42) # Reproducible result
-SNs = np.random.uniform(low=1, high=1, size=X_val.shape[0])
+SNs = np.random.uniform(low=1, high=100, size=X_val.shape[0])
 # 2d array: SNs[realization][BVRI]
 SNs = np.repeat(SNs, 4, axis=0).reshape(X_val.shape[0], 4)
 X_noisy = X_val + np.random.normal(loc=0, scale=X_val/SNs)
@@ -55,23 +49,11 @@ while np.any(X_noisy < 0): # Avoid negative flux
     
 X_val = scaler.transform(X_noisy)
 
-# # Train and val for different hyperparameters
-# for name, clf in clfs.items():
-#     print(name)
-#     clf.fit(X_train, y_train)
-
-#     # Save accuracy for each model
-#     res = {'S/N': SN}
-#     for name, clf in clfs.items():
-#         y_pred = clf.predict(X_scaled)
-#         res[name] = balanced_accuracy_score(y_test, y_pred)
-#     print(res)
-#     df = df.append(res, ignore_index=True)
-
 # Grid search
 with open('hyperparameters.txt', 'a') as f:
     f.write(f'======================={datetime.now()}============================\n')
-    for name, (clf, grid) in clfs.items():
+for name, (clf, grid) in clfs.items():
+    with open('hyperparameters.txt', 'a') as f:
         print(name)
         f.write('\n'+ name + '\n')
         combos = list(ParameterGrid(grid))
@@ -86,6 +68,6 @@ with open('hyperparameters.txt', 'a') as f:
             f.write(f'{acc}: {combo}\n')
             if acc > best_score:
                 best_score, best_params = acc, combo
-    
+
         f.write("Best score: " + str(best_score) + '\n')
         f.write("Best params " + str(best_params) + '\n')
