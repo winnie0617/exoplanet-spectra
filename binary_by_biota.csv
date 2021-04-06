@@ -1,0 +1,169 @@
+S/N,LDA,biota_type
+1,0.4990447486980395,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+3,0.507498142405299,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+5,0.5164502690433669,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+10,0.5268926406962843,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+15,0.5343394251585207,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+20,0.544895808547486,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+30,0.5594594199926012,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+40,0.5651818534102693,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+50,0.5740788782853083,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+60,0.5742173467322534,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+70,0.5738899303591996,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+80,0.5765673848384996,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+90,0.5723391426242941,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"
+100,0.5737582964533722,"43249           agrococcus
+3749            agrococcus
+259010               aspen
+136381                bark
+262405               aspen
+                ...       
+52497           agrococcus
+7097            agrococcus
+90478     geodermatophilus
+297706        leafy spurge
+132295                bark
+Name: biota_type, Length: 63756, dtype: object"

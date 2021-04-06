@@ -14,27 +14,22 @@ from sklearn.metrics import balanced_accuracy_score
 from sklearn.preprocessing import StandardScaler
 
 # Classifiers and Hyperparameters
-first_clfs = {
-    'LR': LogisticRegression(C=0.1, penalty='l2', solver='liblinear'), 
-    'LDA': LinearDiscriminantAnalysis(solver='svd', tol=0.01),
+clfs = {
+    # 'LR': LogisticRegression(C=0.1, penalty='l2', solver='liblinear'), 
+    # 'LDA': LinearDiscriminantAnalysis(solver='svd', tol=0.01),
     'KNN': KNeighborsClassifier(weights='distance', n_neighbors=41),
     'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=5e-5),
-    'NB': GaussianNB(),
-    'SVM': LinearSVC(C=100),
+    # 'NB': GaussianNB(),
+    # 'SVM': LinearSVC(C=100),
     'RF': RandomForestClassifier(n_estimators=200, min_samples_split=50, class_weight='balanced', ccp_alpha=0.0003)
 }
-# Add the two voting classifiers
-clfs = first_clfs.copy()
-clfs['MVH'] = VotingClassifier(estimators=list(first_clfs.items()), voting='hard')
-# Remove SVM for MVS
-del first_clfs['SVM']
-clfs['MVS'] = VotingClassifier(estimators=list(first_clfs.items()), voting='soft')
 
 # Get binary label
 data = pd.read_pickle('full_colors.pkl')
 data['Y'] = data.biota_percentage != 0
 # Split into train and test
 X_train, X_test, y_train, y_test = train_test_split(data[['B','V','R','I']], data['Y'], test_size=0.2, random_state=42)
+biota_types = data.biota_type.unique()
 
 # Scale data
 scaler = StandardScaler()
@@ -52,7 +47,7 @@ for name, clf in clfs.items():
 REALIZATION = 100
 np.random.seed(42) # Reproducible result
 
-cols = ['S/N']
+cols = ['S/N', ]
 cols.extend(list(clfs.keys()))
 df = pd.DataFrame(columns=cols)
 
@@ -66,16 +61,24 @@ for SN in SNs:
         
         while np.any(X_noisy < 0): # Avoid negative flux
             X_noisy[X_noisy < 0] = X_test[X_noisy < 0] + np.random.normal(loc=0, scale=X_test/SN)
-        X_scaled = scaler.transform(X_noisy)
 
-        # Save accuracy for each model
-        res = {'S/N': SN}
-        for name, clf in clfs.items():
-            y_pred = clf.predict(X_scaled)
-            res[name] = balanced_accuracy_score(y_test, y_pred)
-        print(res)
-        df = df.append(res, ignore_index=True)
+        X_scaled = pd.DataFrame(scaler.transform(X_noisy), index=X_noisy.index, columns=['B','V','R','I'])
+        X_scaled['biota_type'] = data.biota_type[X_scaled.index]
 
-# df.insert(loc=0, column='S/N', value=SNs)
-df.to_csv('binary_new_param.csv', index=False)
+        # Loop through each biota type
+        for biota in biota_types:
+            print(biota)
+            # idx = data[data.biota_type==biota].index.intersection(X_test.index)
+            # print("idx", idx)
+            X_test_sub = X_scaled[X_scaled.biota_type==biota].drop(labels='biota_type', axis=1)
+            y_test_sub = y_test[X_scaled.biota_type==biota]
+            # Save accuracy for each model
+            res = {'S/N': SN, 'biota': biota}
+            for name, clf in clfs.items():
+                y_pred = clf.predict(X_test_sub)
+                res[name] = balanced_accuracy_score(y_test_sub, y_pred)
+            print(res)
+            df = df.append(res, ignore_index=True)
+
+df.to_csv('by_biota.csv', index=False)
 
