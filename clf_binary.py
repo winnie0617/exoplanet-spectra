@@ -37,6 +37,20 @@ data = pd.read_pickle('full_colors.pkl')
 data['Y'] = data.biota_percentage != 0
 # Split into train and test
 X_train, X_test, y_train, y_test = train_test_split(data[['B','V','R','I']], data['Y'], test_size=0.2, random_state=42)
+
+# Add noise and aggregate negative samples
+num_pos = y_train.sum()
+factor = num_pos // (len(y_train)-num_pos)
+
+X_train_neg = X_train[y_train == False].to_numpy()
+X_train_upsampled = np.append(X_train.to_numpy(), np.repeat(X_train_neg, factor-1, axis=0), axis=0)
+y_train_upsampled = np.append(y_train.to_numpy(), np.repeat(False, len(X_train_neg)*(factor-1)))
+n = len(y_train_upsampled)
+idx = np.arange(n)
+np.random.shuffle(idx)
+X_train = X_train_upsampled[idx,:]
+y_train = y_train_upsampled[idx]
+
 X_train = add_noise(X_train)
 
 # Scale data
@@ -65,10 +79,7 @@ SNs = [1, 3, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 for SN in SNs:
     print(f'SNR: {SN}')
     for noise_realization in range(REALIZATION):
-        X_noisy = X_test + np.random.normal(loc=0, scale=X_test/SN)
-        
-        while np.any(X_noisy < 0): # Avoid negative flux
-            X_noisy[X_noisy < 0] = X_test[X_noisy < 0] + np.random.normal(loc=0, scale=X_test/SN)
+        X_noisy = add_noise(X_test, SNs=SN)
         X_scaled = scaler.transform(X_noisy)
 
         # Save accuracy for each model

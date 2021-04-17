@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #%%
-df = pd.read_csv('binary_new_param.csv')
+df = pd.read_csv('binary_noisy_train.csv')
 print(df)
 # df['S/N'] = np.round(df['S/N'], decimals=-1)
 df = df[['S/N', 'LR', 'LDA', 'KNN', 'MVH', 'SVM', 'NB', 'CART', 'RF', 'MVS']]
@@ -31,4 +31,11 @@ ax1.set_ylim(0.5, 0.89)
 ax2.set_ylim(0.5, 0.89)
 ax3.set_ylim(0.5, 0.89)
 # plt.legend(bbox_to_anchor=(1.02, 1), loc=2, borderaxespad=0.)
+# %% Visualize dataset
+data = pd.read_pickle('full_colors.pkl')
+print(data)
+data['Y'] = data.biota_percentage != 0
+# sns.displot(x=data['B'], y=data['biota_percentage'], kind='kde')
+plt.plot(data['V'], data['biota_percentage'], '.')
+#,'V','R','I'
 # %%
