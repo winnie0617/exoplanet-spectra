@@ -13,12 +13,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import balanced_accuracy_score
 from sklearn.preprocessing import StandardScaler
 
+from util import add_noise
+
 # Classifiers and Hyperparameters
 first_clfs = {
-    'LR': LogisticRegression(C=0.1, penalty='l2', solver='liblinear'), 
+    'LR': LogisticRegression(C=1e-10, penalty='l2', solver='liblinear'), 
     'LDA': LinearDiscriminantAnalysis(solver='svd', tol=0.01),
-    'KNN': KNeighborsClassifier(weights='distance', n_neighbors=41),
-    'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=5e-5),
+    'KNN': KNeighborsClassifier(weights='distance', n_neighbors=3),
+    'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=1e-6, min_samples_split=5),
     'NB': GaussianNB(),
     'SVM': LinearSVC(C=100),
     'RF': RandomForestClassifier(n_estimators=200, min_samples_split=50, class_weight='balanced', ccp_alpha=0.0003)
@@ -35,6 +37,7 @@ data = pd.read_pickle('full_colors.pkl')
 data['Y'] = data.biota_percentage != 0
 # Split into train and test
 X_train, X_test, y_train, y_test = train_test_split(data[['B','V','R','I']], data['Y'], test_size=0.2, random_state=42)
+X_train = add_noise(X_train)
 
 # Scale data
 scaler = StandardScaler()
@@ -77,5 +80,5 @@ for SN in SNs:
         df = df.append(res, ignore_index=True)
 
 # df.insert(loc=0, column='S/N', value=SNs)
-df.to_csv('binary_new_param.csv', index=False)
+df.to_csv('binary_noisy_train.csv', index=False)
 

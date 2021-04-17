@@ -1,309 +1,367 @@
-=======================2021-04-05 00:14:34.145331============================
-
-LDA
-0.5596: {'solver': 'svd', 'tol': 0.01}
-0.5347: {'solver': 'svd', 'tol': 0.05623413251903491}
-0.5376: {'solver': 'svd', 'tol': 0.31622776601683794}
-0.5: {'solver': 'svd', 'tol': 1.7782794100389228}
-=======================2021-04-05 00:15:00.715717============================
-
-LDA
-0.5596: {'solver': 'svd', 'tol': 0.01}
-0.5347: {'solver': 'svd', 'tol': 0.03162277660168379}
-0.5347: {'solver': 'svd', 'tol': 0.1}
-0.5376: {'solver': 'svd', 'tol': 0.31622776601683794}
-0.5: {'solver': 'svd', 'tol': 1.0}
-Best score: 0.5596
-Best params {'solver': 'svd', 'tol': 0.01}
-
-KNN
-0.6218: {'metric': 'euclidean', 'n_neighbors': 10}
-0.6227: {'metric': 'euclidean', 'n_neighbors': 16}
-0.6172: {'metric': 'euclidean', 'n_neighbors': 27}
-0.6203: {'metric': 'euclidean', 'n_neighbors': 46}
-0.6139: {'metric': 'euclidean', 'n_neighbors': 77}
-0.6075: {'metric': 'euclidean', 'n_neighbors': 129}
-0.5994: {'metric': 'euclidean', 'n_neighbors': 215}
-0.5902: {'metric': 'euclidean', 'n_neighbors': 359}
-0.578: {'metric': 'euclidean', 'n_neighbors': 599}
-0.5579: {'metric': 'euclidean', 'n_neighbors': 1000}
-Best score: 0.6227
-Best params {'metric': 'euclidean', 'n_neighbors': 16}
-
-CART
-0.5442: {'ccp_alpha': 1e-07, 'criterion': 'gini'}
-0.5456: {'ccp_alpha': 6.30957344480193e-07, 'criterion': 'gini'}
-0.5474: {'ccp_alpha': 3.981071705534969e-06, 'criterion': 'gini'}
-0.6036: {'ccp_alpha': 2.5118864315095822e-05, 'criterion': 'gini'}
-0.5691: {'ccp_alpha': 0.00015848931924611142, 'criterion': 'gini'}
-0.5: {'ccp_alpha': 0.001, 'criterion': 'gini'}
-Best score: 0.6036
-Best params {'ccp_alpha': 2.5118864315095822e-05, 'criterion': 'gini'}
+=======================2021-04-16 15:52:27.056962============================
 
 LR
-0.5311: {'C': 1e-06, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5: {'C': 1e-06, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.5081: {'C': 1e-05, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5001: {'C': 1e-05, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.5118: {'C': 0.0001, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5067: {'C': 0.0001, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.543: {'C': 0.001, 'penalty': 'l2', 'solver': 'liblinear'}
-0.542: {'C': 0.001, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.5661: {'C': 0.01, 'penalty': 'l2', 'solver': 'liblinear'}
-0.566: {'C': 0.01, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.5851: {'C': 0.1, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5851: {'C': 0.1, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.5803: {'C': 1.0, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5803: {'C': 1.0, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.5794: {'C': 10.0, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5794: {'C': 10.0, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.5792: {'C': 100.0, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5792: {'C': 100.0, 'penalty': 'l2', 'solver': 'lbfgs'}
-0.5792: {'C': 1000.0, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5792: {'C': 1000.0, 'penalty': 'l2', 'solver': 'lbfgs'}
-Best score: 0.5851
+0.5035: {'C': 1e-05, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5022: {'C': 4.641588833612782e-05, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5051: {'C': 0.00021544346900318823, 'penalty': 'l2', 'solver': 'liblinear'}
+0.511: {'C': 0.001, 'penalty': 'l2', 'solver': 'liblinear'}
+0.514: {'C': 0.004641588833612777, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5148: {'C': 0.021544346900318822, 'penalty': 'l2', 'solver': 'liblinear'}
+0.515: {'C': 0.1, 'penalty': 'l2', 'solver': 'liblinear'}
+0.515: {'C': 0.46415888336127725, 'penalty': 'l2', 'solver': 'liblinear'}
+0.515: {'C': 2.154434690031882, 'penalty': 'l2', 'solver': 'liblinear'}
+0.515: {'C': 10.0, 'penalty': 'l2', 'solver': 'liblinear'}
+Best score: 0.515
 Best params {'C': 0.1, 'penalty': 'l2', 'solver': 'liblinear'}
 
-SVM
-0.5411: {'C': 1e-10}
-0.5409: {'C': 1.6681005372000556e-09}
-0.5388: {'C': 2.782559402207126e-08}
-0.518: {'C': 4.641588833612782e-07}
-0.5051: {'C': 7.742636826811277e-06}
-0.5296: {'C': 0.00012915496650148855}
-0.5564: {'C': 0.002154434690031887}
-0.5792: {'C': 0.0359381366380464}
-0.5782: {'C': 0.5994842503189421}
-0.5781: {'C': 10.0}
-Best score: 0.5792
-Best params {'C': 0.0359381366380464}
-=======================2021-04-05 00:26:41.764287============================
-
 LDA
-0.5596: {'solver': 'svd', 'tol': 1e-06}
-0.5596: {'solver': 'svd', 'tol': 3.5938136638046257e-06}
-0.5596: {'solver': 'svd', 'tol': 1.2915496650148827e-05}
-0.5596: {'solver': 'svd', 'tol': 4.641588833612782e-05}
-0.5596: {'solver': 'svd', 'tol': 0.0001668100537200059}
-0.5596: {'solver': 'svd', 'tol': 0.0005994842503189409}
-0.5596: {'solver': 'svd', 'tol': 0.0021544346900318843}
-0.5596: {'solver': 'svd', 'tol': 0.007742636826811277}
-0.5347: {'solver': 'svd', 'tol': 0.02782559402207126}
-0.5347: {'solver': 'svd', 'tol': 0.1}
-Best score: 0.5596
+0.5096: {'solver': 'svd', 'tol': 1e-06}
+0.5096: {'solver': 'svd', 'tol': 4.641588833612782e-06}
+0.5096: {'solver': 'svd', 'tol': 2.1544346900318823e-05}
+0.5096: {'solver': 'svd', 'tol': 0.0001}
+0.5096: {'solver': 'svd', 'tol': 0.00046415888336127773}
+0.5096: {'solver': 'svd', 'tol': 0.002154434690031882}
+0.5096: {'solver': 'svd', 'tol': 0.01}
+0.5096: {'solver': 'svd', 'tol': 0.046415888336127725}
+0.5096: {'solver': 'svd', 'tol': 0.21544346900318823}
+0.5: {'solver': 'svd', 'tol': 1.0}
+Best score: 0.5096
 Best params {'solver': 'svd', 'tol': 1e-06}
 
 KNN
-0.5587: {'metric': 'euclidean', 'n_neighbors': 1}
-0.5856: {'metric': 'euclidean', 'n_neighbors': 3}
-0.6037: {'metric': 'euclidean', 'n_neighbors': 5}
-0.6068: {'metric': 'euclidean', 'n_neighbors': 11}
-0.6137: {'metric': 'euclidean', 'n_neighbors': 21}
-0.6162: {'metric': 'euclidean', 'n_neighbors': 31}
-0.6171: {'metric': 'euclidean', 'n_neighbors': 41}
-0.6143: {'metric': 'euclidean', 'n_neighbors': 61}
-Best score: 0.6171
-Best params {'metric': 'euclidean', 'n_neighbors': 41}
+0.6013: {'metric': 'euclidean', 'n_neighbors': 10}
+0.5895: {'metric': 'euclidean', 'n_neighbors': 16}
+0.5731: {'metric': 'euclidean', 'n_neighbors': 27}
+0.5735: {'metric': 'euclidean', 'n_neighbors': 46}
+0.566: {'metric': 'euclidean', 'n_neighbors': 77}
+0.5619: {'metric': 'euclidean', 'n_neighbors': 129}
+0.5578: {'metric': 'euclidean', 'n_neighbors': 215}
+0.5504: {'metric': 'euclidean', 'n_neighbors': 359}
+0.5403: {'metric': 'euclidean', 'n_neighbors': 599}
+0.527: {'metric': 'euclidean', 'n_neighbors': 1000}
+Best score: 0.6013
+Best params {'metric': 'euclidean', 'n_neighbors': 10}
 
 CART
-0.5442: {'ccp_alpha': 1e-06, 'criterion': 'gini'}
-0.5489: {'ccp_alpha': 5.994842503189409e-06, 'criterion': 'gini'}
-0.622: {'ccp_alpha': 3.5938136638046256e-05, 'criterion': 'gini'}
-0.5646: {'ccp_alpha': 0.00021544346900318845, 'criterion': 'gini'}
-0.5: {'ccp_alpha': 0.001291549665014884, 'criterion': 'gini'}
-0.5: {'ccp_alpha': 0.007742636826811269, 'criterion': 'gini'}
-0.5: {'ccp_alpha': 0.04641588833612782, 'criterion': 'gini'}
-0.5: {'ccp_alpha': 0.2782559402207126, 'criterion': 'gini'}
-0.5: {'ccp_alpha': 1.6681005372000592, 'criterion': 'gini'}
-0.5: {'ccp_alpha': 10.0, 'criterion': 'gini'}
-Best score: 0.622
-Best params {'ccp_alpha': 3.5938136638046256e-05, 'criterion': 'gini'}
+0.5886: {'ccp_alpha': 1e-06, 'criterion': 'gini'}
+0.5886: {'ccp_alpha': 7.742636826811277e-06, 'criterion': 'gini'}
+0.5493: {'ccp_alpha': 5.994842503189409e-05, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 0.00046415888336127773, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 0.003593813663804626, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 0.02782559402207126, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 0.21544346900318823, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 1.6681005372000557, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 12.915496650148826, 'criterion': 'gini'}
+0.5: {'ccp_alpha': 100.0, 'criterion': 'gini'}
+Best score: 0.5886
+Best params {'ccp_alpha': 1e-06, 'criterion': 'gini'}
+
+SVM
+0.5038: {'C': 0.01}
+0.5039: {'C': 0.07943282347242814}
+0.5039: {'C': 0.6309573444801934}
+0.5044: {'C': 5.011872336272725}
+0.5046: {'C': 39.810717055349734}
+0.5149: {'C': 316.22776601683796}
+Best score: 0.5149
+Best params {'C': 316.22776601683796}
 
 RF
-0.5: {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}
-0.5103: {'max_depth': 5, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}
-Best score: 0.5103
-Best params {'max_depth': 5, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}
+=======================2021-04-16 16:06:08.521139============================
 
 LR
-0.5661: {'C': 0.01, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5831: {'C': 0.01, 'penalty': 'l1', 'solver': 'liblinear'}
-0.571: {'C': 0.018957356524063752, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5811: {'C': 0.018957356524063752, 'penalty': 'l1', 'solver': 'liblinear'}
-0.5778: {'C': 0.03593813663804628, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5801: {'C': 0.03593813663804628, 'penalty': 'l1', 'solver': 'liblinear'}
-0.5826: {'C': 0.06812920690579616, 'penalty': 'l2', 'solver': 'liblinear'}
-=======================2021-04-05 00:35:03.246453============================
+0.528: {'C': 1e-10, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5279: {'C': 2.1544346900318866e-09, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5278: {'C': 4.641588833612773e-08, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5219: {'C': 1e-06, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5021: {'C': 2.1544346900318823e-05, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5082: {'C': 0.00046415888336127724, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5145: {'C': 0.01, 'penalty': 'l2', 'solver': 'liblinear'}
+0.515: {'C': 0.21544346900318778, 'penalty': 'l2', 'solver': 'liblinear'}
+0.515: {'C': 4.641588833612772, 'penalty': 'l2', 'solver': 'liblinear'}
+0.515: {'C': 100.0, 'penalty': 'l2', 'solver': 'liblinear'}
+Best score: 0.528
+Best params {'C': 1e-10, 'penalty': 'l2', 'solver': 'liblinear'}
+
+LDA
+0.5096: {'solver': 'svd', 'tol': 1e-10}
+0.5096: {'solver': 'svd', 'tol': 7.742636826811277e-10}
+0.5096: {'solver': 'svd', 'tol': 5.994842503189421e-09}
+0.5096: {'solver': 'svd', 'tol': 4.641588833612773e-08}
+0.5096: {'solver': 'svd', 'tol': 3.5938136638046254e-07}
+0.5096: {'solver': 'svd', 'tol': 2.782559402207126e-06}
+0.5096: {'solver': 'svd', 'tol': 2.1544346900318823e-05}
+0.5096: {'solver': 'svd', 'tol': 0.00016681005372000556}
+0.5096: {'solver': 'svd', 'tol': 0.0012915496650148827}
+0.5096: {'solver': 'svd', 'tol': 0.01}
+Best score: 0.5096
+Best params {'solver': 'svd', 'tol': 1e-10}
+
+KNN
+0.5904: {'n_neighbors': 1}
+0.591: {'n_neighbors': 3}
+0.5865: {'n_neighbors': 7}
+0.5809: {'n_neighbors': 11}
+0.5749: {'n_neighbors': 21}
+Best score: 0.591
+Best params {'n_neighbors': 3}
+
+CART
+0.5886: {'ccp_alpha': 1e-10, 'criterion': 'gini'}
+0.5902: {'ccp_alpha': 3.593813663804626e-10, 'criterion': 'gini'}
+0.5915: {'ccp_alpha': 1.2915496650148826e-09, 'criterion': 'gini'}
+0.5905: {'ccp_alpha': 4.641588833612773e-09, 'criterion': 'gini'}
+0.5906: {'ccp_alpha': 1.6681005372000592e-08, 'criterion': 'gini'}
+0.5905: {'ccp_alpha': 5.99484250318941e-08, 'criterion': 'gini'}
+0.5898: {'ccp_alpha': 2.1544346900318867e-07, 'criterion': 'gini'}
+0.59: {'ccp_alpha': 7.742636826811278e-07, 'criterion': 'gini'}
+0.589: {'ccp_alpha': 2.782559402207126e-06, 'criterion': 'gini'}
+0.581: {'ccp_alpha': 1e-05, 'criterion': 'gini'}
+Best score: 0.5915
+Best params {'ccp_alpha': 1.2915496650148826e-09, 'criterion': 'gini'}
+
+SVM
+0.523: {'C': 1e-07}
+0.5027: {'C': 1.2915496650148827e-06}
+0.5016: {'C': 1.6681005372000593e-05}
+0.5035: {'C': 0.00021544346900318845}
+0.5038: {'C': 0.0027825594022071257}
+0.5039: {'C': 0.03593813663804626}
+0.5039: {'C': 0.4641588833612782}
+0.5046: {'C': 5.994842503189421}
+0.5142: {'C': 77.42636826811278}
+0.5567: {'C': 1000.0}
+Best score: 0.5567
+Best params {'C': 1000.0}
+
+RF
+0.7008: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 2, 'n_estimators': 200}
+0.6997: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
+0.7005: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 10, 'n_estimators': 200}
+0.7006: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 50, 'n_estimators': 200}
+0.701: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 200, 'n_estimators': 200}
+Best score: 0.701
+Best params {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 200, 'n_estimators': 200}
+=======================2021-04-16 17:33:36.707266============================
 
 LR
-0.5661: {'C': 0.01, 'penalty': 'l2', 'solver': 'liblinear'}
-0.571: {'C': 0.018957356524063752, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5778: {'C': 0.03593813663804628, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5826: {'C': 0.06812920690579616, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5843: {'C': 0.1291549665014884, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5833: {'C': 0.24484367468222268, 'penalty': 'l2', 'solver': 'liblinear'}
-0.582: {'C': 0.464158883361278, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5808: {'C': 0.8799225435691075, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5797: {'C': 1.6681005372000592, 'penalty': 'l2', 'solver': 'liblinear'}
-0.5798: {'C': 3.1622776601683795, 'penalty': 'l2', 'solver': 'liblinear'}
-Best score: 0.5843
-Best params {'C': 0.1291549665014884, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 1e-20, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 1.2915496650148828e-19, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 1.6681005372000558e-18, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 2.1544346900318778e-17, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 2.782559402207126e-16, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 3.593813663804626e-15, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 4.6415888336127915e-14, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 5.994842503189421e-13, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 7.742636826811278e-12, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 1e-10, 'penalty': 'l2', 'solver': 'liblinear'}
+Best score: 0.528
+Best params {'C': 2.782559402207126e-16, 'penalty': 'l2', 'solver': 'liblinear'}
 
 KNN
-0.6162: {'n_neighbors': 31, 'weights': 'uniform'}
-0.6154: {'n_neighbors': 31, 'weights': 'distance'}
-0.6171: {'n_neighbors': 41, 'weights': 'uniform'}
-0.6168: {'n_neighbors': 41, 'weights': 'distance'}
-0.6149: {'n_neighbors': 51, 'weights': 'uniform'}
-0.6155: {'n_neighbors': 51, 'weights': 'distance'}
-0.6143: {'n_neighbors': 61, 'weights': 'uniform'}
-0.6153: {'n_neighbors': 61, 'weights': 'distance'}
-0.6145: {'n_neighbors': 71, 'weights': 'uniform'}
-0.6155: {'n_neighbors': 71, 'weights': 'distance'}
-0.614: {'n_neighbors': 81, 'weights': 'uniform'}
-0.6149: {'n_neighbors': 81, 'weights': 'distance'}
-Best score: 0.6171
-Best params {'n_neighbors': 41, 'weights': 'uniform'}
+0.591: {'n_neighbors': 3}
+0.5452: {'n_neighbors': 500}
+0.527: {'n_neighbors': 1000}
+0.5: {'n_neighbors': 4000}
+Best score: 0.591
+Best params {'n_neighbors': 3}
 
 CART
-0.5442: {'ccp_alpha': 1e-06, 'criterion': 'gini'}
-0.5456: {'ccp_alpha': 2.1544346900318822e-06, 'criterion': 'gini'}
-0.5474: {'ccp_alpha': 4.641588833612782e-06, 'criterion': 'gini'}
-0.5664: {'ccp_alpha': 1e-05, 'criterion': 'gini'}
-0.5946: {'ccp_alpha': 2.1544346900318823e-05, 'criterion': 'gini'}
-0.6194: {'ccp_alpha': 4.641588833612772e-05, 'criterion': 'gini'}
-0.5848: {'ccp_alpha': 0.0001, 'criterion': 'gini'}
-0.5646: {'ccp_alpha': 0.00021544346900318823, 'criterion': 'gini'}
-0.5243: {'ccp_alpha': 0.00046415888336127773, 'criterion': 'gini'}
-0.5: {'ccp_alpha': 0.001, 'criterion': 'gini'}
-Best score: 0.6194
-Best params {'ccp_alpha': 4.641588833612772e-05, 'criterion': 'gini'}
-
-RF
-0.5: {'max_depth': 2, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.5: {'max_depth': 2, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-0.5: {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 200}
-0.5: {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}
-0.5103: {'max_depth': 5, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.5105: {'max_depth': 5, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-0.5101: {'max_depth': 5, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 200}
-0.5097: {'max_depth': 5, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}
-0.5319: {'max_depth': None, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.5324: {'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-0.5317: {'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 200}
-0.5319: {'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}
-Best score: 0.5324
-Best params {'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
+0.5886: {'ccp_alpha': 1e-10, 'criterion': 'gini'}
+0.5902: {'ccp_alpha': 2.782559402207126e-10, 'criterion': 'gini'}
+0.5915: {'ccp_alpha': 7.742636826811277e-10, 'criterion': 'gini'}
+0.5905: {'ccp_alpha': 2.1544346900318866e-09, 'criterion': 'gini'}
+0.5906: {'ccp_alpha': 5.994842503189421e-09, 'criterion': 'gini'}
+0.5905: {'ccp_alpha': 1.6681005372000592e-08, 'criterion': 'gini'}
+0.5898: {'ccp_alpha': 4.641588833612773e-08, 'criterion': 'gini'}
+0.59: {'ccp_alpha': 1.2915496650148827e-07, 'criterion': 'gini'}
+0.5891: {'ccp_alpha': 3.5938136638046254e-07, 'criterion': 'gini'}
+0.5875: {'ccp_alpha': 1e-06, 'criterion': 'gini'}
+Best score: 0.5915
+Best params {'ccp_alpha': 7.742636826811277e-10, 'criterion': 'gini'}
 
 SVM
-0.5479: {'C': 0.001}
-0.5627: {'C': 0.003593813663804626}
-0.5777: {'C': 0.01291549665014884}
-0.5789: {'C': 0.046415888336127795}
-0.578: {'C': 0.1668100537200059}
-0.5782: {'C': 0.5994842503189409}
-0.5779: {'C': 2.1544346900318843}
-0.5782: {'C': 7.742636826811277}
-0.5776: {'C': 27.825594022071257}
-0.5817: {'C': 100.0}
-Best score: 0.5817
-Best params {'C': 100.0}
-=======================2021-04-05 00:56:31.750761============================
+0.5274: {'C': 1e-08}
+0.528: {'C': 1e-10}
+0.5667: {'C': 200}
+0.5114: {'C': 600}
+0.5029: {'C': 1000}
+0.5011: {'C': 2000}
+Best score: 0.5667
+Best params {'C': 200}
+
+RF
+0.6014: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': 2, 'n_estimators': 200}
+0.7004: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': 10, 'n_estimators': 200}
+0.6998: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': 50, 'n_estimators': 200}
+0.7006: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': 100, 'n_estimators': 200}
+=======================2021-04-16 20:52:53.898005============================
+
+LR
+0.5: {'C': 1e-20, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 1e-20, 'penalty': 'l1', 'solver': 'liblinear'}
+0.5: {'C': 1.2915496650148828e-19, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 1.2915496650148828e-19, 'penalty': 'l1', 'solver': 'liblinear'}
+0.5: {'C': 1.6681005372000558e-18, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 1.6681005372000558e-18, 'penalty': 'l1', 'solver': 'liblinear'}
+0.5: {'C': 2.1544346900318778e-17, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 2.1544346900318778e-17, 'penalty': 'l1', 'solver': 'liblinear'}
+0.528: {'C': 2.782559402207126e-16, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 2.782559402207126e-16, 'penalty': 'l1', 'solver': 'liblinear'}
+0.528: {'C': 3.593813663804626e-15, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 3.593813663804626e-15, 'penalty': 'l1', 'solver': 'liblinear'}
+0.528: {'C': 4.6415888336127915e-14, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 4.6415888336127915e-14, 'penalty': 'l1', 'solver': 'liblinear'}
+0.528: {'C': 5.994842503189421e-13, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 5.994842503189421e-13, 'penalty': 'l1', 'solver': 'liblinear'}
+0.528: {'C': 7.742636826811278e-12, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 7.742636826811278e-12, 'penalty': 'l1', 'solver': 'liblinear'}
+0.528: {'C': 1e-10, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 1e-10, 'penalty': 'l1', 'solver': 'liblinear'}
+Best score: 0.528
+Best params {'C': 2.782559402207126e-16, 'penalty': 'l2', 'solver': 'liblinear'}
 
 KNN
-0.6162: {'n_neighbors': 31}
-0.6171: {'n_neighbors': 41}
-0.6149: {'n_neighbors': 51}
-0.6143: {'n_neighbors': 61}
-0.6145: {'n_neighbors': 71}
-0.614: {'n_neighbors': 81}
-Best score: 0.6171
-Best params {'n_neighbors': 41}
+0.591: {'n_neighbors': 3}
+0.5885: {'n_neighbors': 5}
+0.5823: {'n_neighbors': 9}
+Best score: 0.591
+Best params {'n_neighbors': 3}
 
 CART
-0.612: {'ccp_alpha': 3e-05, 'criterion': 'gini'}
-0.5791: {'ccp_alpha': 3e-05, 'criterion': 'entropy'}
-0.6227: {'ccp_alpha': 5e-05, 'criterion': 'gini'}
-0.6118: {'ccp_alpha': 5e-05, 'criterion': 'entropy'}
-0.5659: {'ccp_alpha': 1e-05, 'criterion': 'gini'}
-0.5563: {'ccp_alpha': 1e-05, 'criterion': 'entropy'}
-0.5103: {'ccp_alpha': 0.0005, 'criterion': 'gini'}
-0.5447: {'ccp_alpha': 0.0005, 'criterion': 'entropy'}
-Best score: 0.6227
-Best params {'ccp_alpha': 5e-05, 'criterion': 'gini'}
+0.5902: {'ccp_alpha': 1e-10, 'criterion': 'gini'}
+0.5897: {'ccp_alpha': 2.782559402207126e-10, 'criterion': 'gini'}
+0.5891: {'ccp_alpha': 7.742636826811277e-10, 'criterion': 'gini'}
+0.5897: {'ccp_alpha': 2.1544346900318866e-09, 'criterion': 'gini'}
+0.5902: {'ccp_alpha': 5.994842503189421e-09, 'criterion': 'gini'}
+0.5908: {'ccp_alpha': 1.6681005372000592e-08, 'criterion': 'gini'}
+0.5898: {'ccp_alpha': 4.641588833612773e-08, 'criterion': 'gini'}
+0.5898: {'ccp_alpha': 1.2915496650148827e-07, 'criterion': 'gini'}
+0.5895: {'ccp_alpha': 3.5938136638046254e-07, 'criterion': 'gini'}
+0.5909: {'ccp_alpha': 1e-06, 'criterion': 'gini'}
+Best score: 0.5909
+Best params {'ccp_alpha': 1e-06, 'criterion': 'gini'}
 
 SVM
-0.5798: {'C': 31.622776601683793}
-0.5758: {'C': 74.98942093324558}
-0.5821: {'C': 177.82794100389228}
-0.5749: {'C': 421.6965034285823}
-0.5518: {'C': 1000.0}
-Best score: 0.5821
-Best params {'C': 177.82794100389228}
+0.5014: {'C': 1e-05}
+0.5033: {'C': 0.00013894954943731373}
+0.5038: {'C': 0.0019306977288832496}
+0.5039: {'C': 0.026826957952797246}
+0.5039: {'C': 0.3727593720314938}
+0.5045: {'C': 5.179474679231202}
 
-RF
-0.5315: {'ccp_alpha': 0, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.532: {'ccp_alpha': 0, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-0.5198: {'ccp_alpha': 0, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.5216: {'ccp_alpha': 0, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-0.5318: {'ccp_alpha': 1e-07, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.5316: {'ccp_alpha': 1e-07, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-0.5197: {'ccp_alpha': 1e-07, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.522: {'ccp_alpha': 1e-07, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-0.5827: {'ccp_alpha': 3e-05, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.5827: {'ccp_alpha': 3e-05, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-0.6138: {'ccp_alpha': 3e-05, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 2, 'n_estimators': 200}
-0.6143: {'ccp_alpha': 3e-05, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 200}
-=======================2021-04-05 01:29:48.388387============================
+=======================2021-04-16 20:59:26.400922============================
+
+LR
+0.5: {'C': 1e-20, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 1e-20, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.5: {'C': 1.2915496650148828e-19, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 1.2915496650148828e-19, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.5: {'C': 1.6681005372000558e-18, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 1.6681005372000558e-18, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.5: {'C': 2.1544346900318778e-17, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 2.1544346900318778e-17, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.528: {'C': 2.782559402207126e-16, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 2.782559402207126e-16, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.528: {'C': 3.593813663804626e-15, 'penalty': 'l2', 'solver': 'liblinear'}
+0.528: {'C': 3.593813663804626e-15, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.528: {'C': 4.6415888336127915e-14, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 4.6415888336127915e-14, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.528: {'C': 5.994842503189421e-13, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 5.994842503189421e-13, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.528: {'C': 7.742636826811278e-12, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 7.742636826811278e-12, 'penalty': 'l2', 'solver': 'lbfgs'}
+0.528: {'C': 1e-10, 'penalty': 'l2', 'solver': 'liblinear'}
+0.5: {'C': 1e-10, 'penalty': 'l2', 'solver': 'lbfgs'}
+Best score: 0.528
+Best params {'C': 1e-20, 'penalty': 'l2', 'solver': 'lbfgs'}
+
+CART
+0.5886: {'ccp_alpha': 1e-10, 'criterion': 'gini', 'min_samples_split': 2}
+0.5934: {'ccp_alpha': 1e-10, 'criterion': 'gini', 'min_samples_split': 5}
+0.5935: {'ccp_alpha': 1e-10, 'criterion': 'gini', 'min_samples_split': 10}
+0.5855: {'ccp_alpha': 1e-10, 'criterion': 'gini', 'min_samples_split': 50}
+0.5906: {'ccp_alpha': 2.782559402207126e-10, 'criterion': 'gini', 'min_samples_split': 2}
+0.5939: {'ccp_alpha': 2.782559402207126e-10, 'criterion': 'gini', 'min_samples_split': 5}
+0.5934: {'ccp_alpha': 2.782559402207126e-10, 'criterion': 'gini', 'min_samples_split': 10}
+0.5865: {'ccp_alpha': 2.782559402207126e-10, 'criterion': 'gini', 'min_samples_split': 50}
+0.5891: {'ccp_alpha': 7.742636826811277e-10, 'criterion': 'gini', 'min_samples_split': 2}
+0.593: {'ccp_alpha': 7.742636826811277e-10, 'criterion': 'gini', 'min_samples_split': 5}
+0.5937: {'ccp_alpha': 7.742636826811277e-10, 'criterion': 'gini', 'min_samples_split': 10}
+0.5852: {'ccp_alpha': 7.742636826811277e-10, 'criterion': 'gini', 'min_samples_split': 50}
+0.5891: {'ccp_alpha': 2.1544346900318866e-09, 'criterion': 'gini', 'min_samples_split': 2}
+0.5929: {'ccp_alpha': 2.1544346900318866e-09, 'criterion': 'gini', 'min_samples_split': 5}
+0.5933: {'ccp_alpha': 2.1544346900318866e-09, 'criterion': 'gini', 'min_samples_split': 10}
+0.5861: {'ccp_alpha': 2.1544346900318866e-09, 'criterion': 'gini', 'min_samples_split': 50}
+0.5898: {'ccp_alpha': 5.994842503189421e-09, 'criterion': 'gini', 'min_samples_split': 2}
+0.5943: {'ccp_alpha': 5.994842503189421e-09, 'criterion': 'gini', 'min_samples_split': 5}
+0.5944: {'ccp_alpha': 5.994842503189421e-09, 'criterion': 'gini', 'min_samples_split': 10}
+0.5858: {'ccp_alpha': 5.994842503189421e-09, 'criterion': 'gini', 'min_samples_split': 50}
+0.5913: {'ccp_alpha': 1.6681005372000592e-08, 'criterion': 'gini', 'min_samples_split': 2}
+0.5957: {'ccp_alpha': 1.6681005372000592e-08, 'criterion': 'gini', 'min_samples_split': 5}
+0.5937: {'ccp_alpha': 1.6681005372000592e-08, 'criterion': 'gini', 'min_samples_split': 10}
+0.5862: {'ccp_alpha': 1.6681005372000592e-08, 'criterion': 'gini', 'min_samples_split': 50}
+0.5896: {'ccp_alpha': 4.641588833612773e-08, 'criterion': 'gini', 'min_samples_split': 2}
+0.5933: {'ccp_alpha': 4.641588833612773e-08, 'criterion': 'gini', 'min_samples_split': 5}
+0.5943: {'ccp_alpha': 4.641588833612773e-08, 'criterion': 'gini', 'min_samples_split': 10}
+0.5854: {'ccp_alpha': 4.641588833612773e-08, 'criterion': 'gini', 'min_samples_split': 50}
+0.5893: {'ccp_alpha': 1.2915496650148827e-07, 'criterion': 'gini', 'min_samples_split': 2}
+0.5935: {'ccp_alpha': 1.2915496650148827e-07, 'criterion': 'gini', 'min_samples_split': 5}
+0.5925: {'ccp_alpha': 1.2915496650148827e-07, 'criterion': 'gini', 'min_samples_split': 10}
+0.5855: {'ccp_alpha': 1.2915496650148827e-07, 'criterion': 'gini', 'min_samples_split': 50}
+0.5897: {'ccp_alpha': 3.5938136638046254e-07, 'criterion': 'gini', 'min_samples_split': 2}
+0.592: {'ccp_alpha': 3.5938136638046254e-07, 'criterion': 'gini', 'min_samples_split': 5}
+0.5939: {'ccp_alpha': 3.5938136638046254e-07, 'criterion': 'gini', 'min_samples_split': 10}
+0.5861: {'ccp_alpha': 3.5938136638046254e-07, 'criterion': 'gini', 'min_samples_split': 50}
+0.5888: {'ccp_alpha': 1e-06, 'criterion': 'gini', 'min_samples_split': 2}
+0.594: {'ccp_alpha': 1e-06, 'criterion': 'gini', 'min_samples_split': 5}
+0.5933: {'ccp_alpha': 1e-06, 'criterion': 'gini', 'min_samples_split': 10}
+0.5861: {'ccp_alpha': 1e-06, 'criterion': 'gini', 'min_samples_split': 50}
+Best score: 0.5957
+Best params {'ccp_alpha': 1.6681005372000592e-08, 'criterion': 'gini', 'min_samples_split': 5}
 
 SVM
-0.5755: {'C': 50}
-0.5815: {'C': 100}
-0.5756: {'C': 200}
-Best score: 0.5815
-Best params {'C': 100}
+0.5014: {'C': 1e-05}
+0.5033: {'C': 0.00013894954943731373}
+0.5038: {'C': 0.0019306977288832496}
+0.5039: {'C': 0.026826957952797246}
+=======================2021-04-16 21:02:11.613559============================
+
+CART
+0.5889: {'ccp_alpha': 1e-08, 'criterion': 'gini', 'min_samples_split': 2}
+0.5863: {'ccp_alpha': 1e-08, 'criterion': 'gini', 'min_samples_split': 50}
+0.5722: {'ccp_alpha': 1e-08, 'criterion': 'gini', 'min_samples_split': 200}
+0.5559: {'ccp_alpha': 1e-08, 'criterion': 'gini', 'min_samples_split': 1000}
+0.5078: {'ccp_alpha': 1e-08, 'criterion': 'gini', 'min_samples_split': 5000}
+Best score: 0.5889
+Best params {'ccp_alpha': 1e-08, 'criterion': 'gini', 'min_samples_split': 2}
+
+SVM
+0.5014: {'C': 1e-05}
+0.5033: {'C': 0.00013894954943731373}
+0.5038: {'C': 0.0019306977288832496}
+0.5039: {'C': 0.026826957952797246}
+0.5039: {'C': 0.3727593720314938}
+0.5045: {'C': 5.179474679231202}
+0.5641: {'C': 71.96856730011514}
+0.5005: {'C': 1000.0}
+Best score: 0.5641
+Best params {'C': 71.96856730011514}
 
 RF
-0.5329: {'ccp_alpha': 1e-06, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.5221: {'ccp_alpha': 1e-06, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.5472: {'ccp_alpha': 1e-05, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.5464: {'ccp_alpha': 1e-05, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.5659: {'ccp_alpha': 0.0001, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.6812: {'ccp_alpha': 0.0001, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.5: {'ccp_alpha': 0.001, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.6953: {'ccp_alpha': 0.001, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.5: {'ccp_alpha': 0.01, 'class_weight': None, 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-0.6138: {'ccp_alpha': 0.01, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-Best score: 0.6953
-Best params {'ccp_alpha': 0.001, 'class_weight': 'balanced', 'max_depth': None, 'max_features': 'auto', 'min_samples_split': 5, 'n_estimators': 100}
-=======================2021-04-05 01:51:27.456397============================
+0.6014: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': 2, 'n_estimators': 200}
+0.7006: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': 10, 'n_estimators': 200}
+=======================2021-04-17 02:31:37.474135============================
 
 RF
-0.6823: {'ccp_alpha': 0.0001, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-0.706: {'ccp_alpha': 0.00031622776601683794, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-0.6946: {'ccp_alpha': 0.001, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-0.6729: {'ccp_alpha': 0.0031622776601683794, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-0.6143: {'ccp_alpha': 0.01, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-Best score: 0.706
-Best params {'ccp_alpha': 0.00031622776601683794, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-=======================2021-04-05 02:09:44.734463============================
+0.7006: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': None, 'n_estimators': 200}
+Best score: 0.7006
+Best params {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': None, 'n_estimators': 200}
+=======================2021-04-17 02:50:00.575953============================
 
 RF
-0.7061: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-0.705: {'ccp_alpha': 0.0005, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-0.6994: {'ccp_alpha': 0.0008, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-Best score: 0.7061
-Best params {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 5, 'n_estimators': 200}
-=======================2021-04-05 02:23:03.546190============================
-
-RF
-=======================2021-04-05 02:24:19.779182============================
-
-RF
-0.7062: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 50, 'n_estimators': 200}
-Best score: 0.7062
-Best params {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 50, 'n_estimators': 200}
-=======================2021-04-05 02:32:57.773869============================
-
-RF
-0.7057: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'min_samples_split': 50, 'n_estimators': 400}
+0.701: {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': None, 'n_estimators': 100}
+0.5951: {'ccp_alpha': 0.01, 'class_weight': 'balanced', 'max_depth': None, 'n_estimators': 100}
+0.6378: {'ccp_alpha': 1e-05, 'class_weight': 'balanced', 'max_depth': None, 'n_estimators': 100}
+Best score: 0.701
+Best params {'ccp_alpha': 0.0003, 'class_weight': 'balanced', 'max_depth': None, 'n_estimators': 100}
