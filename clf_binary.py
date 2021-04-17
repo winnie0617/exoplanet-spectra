@@ -13,17 +13,17 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import balanced_accuracy_score
 from sklearn.preprocessing import StandardScaler
 
-from util import add_noise
+from util import *
 
 # Classifiers and Hyperparameters
 first_clfs = {
-    'LR': LogisticRegression(C=1e-10, penalty='l2', solver='liblinear'), 
+    'LR': LogisticRegression(C=1, penalty='l2', solver='liblinear'), 
     'LDA': LinearDiscriminantAnalysis(solver='svd', tol=0.01),
-    'KNN': KNeighborsClassifier(weights='distance', n_neighbors=3),
-    'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=1e-6, min_samples_split=5),
+    'KNN': KNeighborsClassifier(weights='uniform', n_neighbors=201),
+    'CART': DecisionTreeClassifier(criterion='gini', splitter='best', ccp_alpha=2e-5),
     'NB': GaussianNB(),
-    'SVM': LinearSVC(C=100),
-    'RF': RandomForestClassifier(n_estimators=200, min_samples_split=50, class_weight='balanced', ccp_alpha=0.0003)
+    'SVM': LinearSVC(C=10),
+    'RF': RandomForestClassifier(n_estimators=200, min_samples_split=50, ccp_alpha=0.0003)
 }
 # Add the two voting classifiers
 clfs = first_clfs.copy()
@@ -39,18 +39,7 @@ data['Y'] = data.biota_percentage != 0
 X_train, X_test, y_train, y_test = train_test_split(data[['B','V','R','I']], data['Y'], test_size=0.2, random_state=42)
 
 # Add noise and aggregate negative samples
-num_pos = y_train.sum()
-factor = num_pos // (len(y_train)-num_pos)
-
-X_train_neg = X_train[y_train == False].to_numpy()
-X_train_upsampled = np.append(X_train.to_numpy(), np.repeat(X_train_neg, factor-1, axis=0), axis=0)
-y_train_upsampled = np.append(y_train.to_numpy(), np.repeat(False, len(X_train_neg)*(factor-1)))
-n = len(y_train_upsampled)
-idx = np.arange(n)
-np.random.shuffle(idx)
-X_train = X_train_upsampled[idx,:]
-y_train = y_train_upsampled[idx]
-
+X_train, y_train = upsample_minority(X_train, y_train)
 X_train = add_noise(X_train)
 
 # Scale data

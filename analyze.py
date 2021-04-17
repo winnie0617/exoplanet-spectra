@@ -38,4 +38,26 @@ data['Y'] = data.biota_percentage != 0
 # sns.displot(x=data['B'], y=data['biota_percentage'], kind='kde')
 plt.plot(data['V'], data['biota_percentage'], '.')
 #,'V','R','I'
+# %% Verifying sampling
+from util import *
+import pandas as pd
+from sklearn.model_selection import train_test_split
+# Get binary label
+data = pd.read_pickle('full_colors.pkl')
+data['Y'] = data.biota_percentage != 0
+# Split into train and test
+X_train, X_test, y_train, y_test = train_test_split(data[['B','V','R','I']], data['Y'], test_size=0.2, random_state=42)
+
+# Add noise and aggregate negative samples
+X_train, y_train = upsample_minority(X_train, y_train)
+u = np.unique(X_train, axis=0)
+# X_train = add_noise(X_train)
+
+# # Scale data
+# scaler = StandardScaler()
+# scaler.fit(X_train)
+# X_train = scaler.transform(X_train)
+
+
+
 # %%

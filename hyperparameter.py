@@ -15,16 +15,16 @@ from sklearn.preprocessing import StandardScaler
 
 from datetime import datetime
 
-from util import add_noise
+from util import *
 
 # Classifiers and Hyperparameters
 clfs = {
-    # 'LR': (LogisticRegression, {'C': np.logspace(-20, -10, 10), 'solver': ['liblinear', 'lbfgs'], 'penalty': ['l2']}),
-    # 'LDA': (LinearDiscriminantAnalysis, {'solver':['svd'], 'tol': np.logspace(-10, -2, 10)}),
-    # 'KNN': (KNeighborsClassifier, {'n_neighbors': [3, 5, 9]}),
-    # 'CART': (DecisionTreeClassifier, {'criterion': ['gini'], 'ccp_alpha': [1e-8], 'min_samples_split': [2,50, 200, 1000, 5000]}),
-    # 'SVM': (LinearSVC, {'C': np.logspace(-5,3,8)}),
-    'RF': (RandomForestClassifier, {'n_estimators': [100], 'max_depth': [None], 'class_weight': ['balanced'], 'ccp_alpha': [0.0003, 0.01, 0.00001]}),
+    # 'LR': (LogisticRegression, {'C': np.logspace(-1, 1, 5), 'solver': ['liblinear'], 'penalty': ['l2', 'l1']}),
+    # 'LDA': (LinearDiscriminantAnalysis, {'solver':['svd'], 'tol': np.logspace(-10, 2, 10)}),
+    # 'KNN': (KNeighborsClassifier, {'n_neighbors': [201, 1501], 'weights':['distance', 'uniform']}),
+    'CART': (DecisionTreeClassifier, {'criterion': ['gini'], 'ccp_alpha': [1e-5], 'min_samples_split': [2, 5, 20, 5, 100, 500, 1000]}),
+    # 'SVM': (LinearSVC, {'C': np.logspace(-1,2.5,8)}),
+    # 'RF': (RandomForestClassifier, {'n_estimators': [100], 'max_depth': [None], 'class_weight': [None], 'ccp_alpha': [0.0003]}),
     }
 
 # Get binary label
@@ -36,6 +36,8 @@ X_train_val, X_test, y_train_val, y_test = train_test_split(df[['B','V','R','I']
 # Split into train and val
 X_train, X_val, y_train, y_val = train_test_split(df[['B','V','R','I']], df['Y'], test_size=0.2, random_state=42)
 
+# Add noise and aggregate negative samples
+X_train, y_train = upsample_minority(X_train, y_train)
 X_train = add_noise(X_train)
 
 # Scale train
@@ -43,7 +45,7 @@ scaler = StandardScaler()
 scaler.fit(X_train)
 X_train = scaler.transform(X_train)
 
-X_val = add_noise(X_val)
+X_val = add_noise(X_val.to_numpy())
 X_val = scaler.transform(X_val)
 
 # Grid search
