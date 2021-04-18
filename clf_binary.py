@@ -68,7 +68,7 @@ SNs = [1, 3, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 for SN in SNs:
     print(f'SNR: {SN}')
     for noise_realization in range(REALIZATION):
-        X_noisy = add_noise(X_test, SNs=SN)
+        X_noisy = add_noise(X_test.to_numpy(), SNs=SN)
         X_scaled = scaler.transform(X_noisy)
 
         # Save accuracy for each model
@@ -80,5 +80,5 @@ for SN in SNs:
         df = df.append(res, ignore_index=True)
 
 # df.insert(loc=0, column='S/N', value=SNs)
-df.to_csv('binary_noisy_train.csv', index=False)
+df.to_csv('binary_upsampled.csv', index=False)
 
