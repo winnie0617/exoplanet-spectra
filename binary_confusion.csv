@@ -1,0 +1,25 @@
+label,LR,KNN,CART,SVM,S/N
+"43249      True
+3749       True
+259010     True
+136381    False
+262405    False
+          ...  
+52497      True
+7097       True
+90478      True
+297706    False
+132295     True
+Name: Y, Length: 63756, dtype: bool",[ True  True  True ... False False  True],[ True  True  True ... False False  True],[ True False  True ... False False  True],[ True  True  True ... False False False],10.0
+"43249      True
+3749       True
+259010     True
+136381    False
+262405    False
+          ...  
+52497      True
+7097       True
+90478      True
+297706    False
+132295     True
+Name: Y, Length: 63756, dtype: bool",[ True  True  True ...  True False False],[ True  True  True ... False False False],[ True  True  True ... False False False],[ True  True  True ...  True False False],100.0

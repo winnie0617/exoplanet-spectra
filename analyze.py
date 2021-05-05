@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #%%
-df = pd.read_csv('binary_noisy_train.csv')
+df = pd.read_csv('binary_upsampled.csv')
 print(df)
 # df['S/N'] = np.round(df['S/N'], decimals=-1)
 df = df[['S/N', 'LR', 'LDA', 'KNN', 'MVH', 'SVM', 'NB', 'CART', 'RF', 'MVS']]
@@ -14,7 +14,7 @@ print("df", df)
 
 sns.set()
 fig, ax = plt.subplots()
-plot = sns.lineplot(data=df, x='S/N', y='balanced_accuracy', hue='model', ax=ax, err_style='band')
+plot = sns.lineplot(data=df, x='S/N', y='balanced_accuracy', hue='model', ax=ax, err_style='band', ci=99)
 ax.set_ylim(0.5, 0.77)
 plt.legend(bbox_to_anchor=(1.02, 1), loc=2, borderaxespad=0.)
 # plot.get_figure().savefig('binary_updated.png')
