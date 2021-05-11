@@ -61,3 +61,16 @@ u = np.unique(X_train, axis=0)
 
 
 # %%
+from classifiers import get_clfs
+from sklearn import tree
+
+clfs = get_clfs(['RF'])
+
+# tree.plot_tree(clfs['CART'], max_depth=5)
+
+# %%
+print(clfs['RF'].estimators_[100].tree_.max_depth)
+clfs['RF'].estimators_[100].tree_.node_count
+# tree.plot_tree(clfs['RF'].estimators_[0])
+
+# %%

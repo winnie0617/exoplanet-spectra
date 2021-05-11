@@ -22,8 +22,8 @@ clfs = {
     # 'LR': (LogisticRegression, {'C': np.logspace(-1, 1, 5), 'solver': ['liblinear'], 'penalty': ['l2', 'l1']}),
     # 'LDA': (LinearDiscriminantAnalysis, {'solver':['svd'], 'tol': np.logspace(-10, 2, 10)}),
     # 'KNN': (KNeighborsClassifier, {'n_neighbors': [201, 1501], 'weights':['distance', 'uniform']}),
-    'CART': (DecisionTreeClassifier, {'criterion': ['gini'], 'ccp_alpha': [1e-5], 'min_samples_split': [2, 5, 20, 5, 100, 500, 1000]}),
-    # 'SVM': (LinearSVC, {'C': np.logspace(-1,2.5,8)}),
+    # 'CART': (DecisionTreeClassifier, {'criterion': ['gini'], 'ccp_alpha': [1e-5], 'min_samples_split': [2, 5, 20, 5, 100, 500, 1000]}),
+    'SVM': (LinearSVC, {'C': [1e-6],'dual':[False]}),
     # 'RF': (RandomForestClassifier, {'n_estimators': [100], 'max_depth': [None], 'class_weight': [None], 'ccp_alpha': [0.0003]}),
     }
 
